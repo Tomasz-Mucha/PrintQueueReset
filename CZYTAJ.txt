@@ -1,0 +1,67 @@
+Print Queue Reset
+=================
+
+Narzędzie Windows do resetu kolejki druku.
+Wstrzymuje proces drukowania (usługa Print Spooler),
+czyści bufor kolejki i wznawia drukowanie.
+
+Niewydrukowane dokumenty znikają z kolejki.
+
+Okno jest po polsku, szwedzku albo angielsku — według
+języka wyświetlania Windows. W wersji Python język
+można wymusić przełącznikiem --lang pl, --lang sv
+albo --lang en, lub zmienną środowiskową PQR_LANG
+(pl, sv, en).
+
+Są dwie wersje tego samego narzędzia: Python/tkinter
+oraz mały program C/Win32.
+
+Wymagania
+---------
+Windows 10 lub Windows 11.
+Uprawnienia administratora. Zatrzymanie usługi Spooler
+i usunięcie plików bufora wymagają podniesienia uprawnień.
+Program prosi o nie przez UAC. Po anulowaniu monitu okno
+i tak się otwiera, z przyciskiem „Uruchom jako administrator”.
+
+Uruchomienie wersji Python
+---------------------------
+Wystarczy Python 3 ze standardową biblioteką (tkinter).
+Nie trzeba instalować dodatkowych pakietów.
+
+    python run.py
+
+Uruchomienie wersji natywnej
+-----------------------------
+    portable\PrintQueueReset.exe
+
+Jeden plik .exe, bez Pythona i bez instalacji.
+
+Przyciski
+---------
+Resetuj kolejkę druku  — pełny cykl: wstrzymaj, wyczyść, wznów
+Wstrzymaj              — zatrzymuje usługę Spooler
+Wyczyść bufor          — usuwa zadania z kolejki
+Wznów                  — ponownie uruchamia usługę Spooler
+
+Kompilacja wersji natywnej
+--------------------------
+W folderze native\ uruchom build.bat.
+Skrypt używa GCC (MinGW / WinLibs). Gdy GCC nie ma w PATH,
+sięga po TCC z tools\tcc\tcc\tcc.exe.
+Wynik: portable\PrintQueueReset.exe
+
+Budowanie wersji Python (PyInstaller)
+--------------------------------------
+W katalogu głównym, po zainstalowaniu PyInstaller, uruchom build.bat.
+Wynik też trafia do portable\PrintQueueReset.exe
+(razem z CZYTAJ.txt, LICENSE.txt i NOTICE.txt).
+Obie kompilacje zapisują ten sam plik, więc buduj tę wersję,
+którą chcesz rozdać.
+
+Licencja
+--------
+MIT License.
+Copyright (c) 2026 Tomasz Mucha
+Pełny tekst: plik LICENSE.
+Program jest dostarczany bez gwarancji.

@@ -1,0 +1,3 @@
+LIBRARY winspool.drv
+EXPORTS
+EnumPrintersW

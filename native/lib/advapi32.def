@@ -1,0 +1,11 @@
+LIBRARY advapi32.dll
+EXPORTS
+OpenSCManagerW
+OpenServiceW
+CloseServiceHandle
+QueryServiceStatusEx
+ControlService
+StartServiceW
+AllocateAndInitializeSid
+CheckTokenMembership
+FreeSid

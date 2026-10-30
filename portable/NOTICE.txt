@@ -1,0 +1,5 @@
+Print Queue Reset
+Copyright (c) 2026 Tomasz Mucha
+
+This software is licensed under the MIT License.
+See the file LICENSE for the full terms.
